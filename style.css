@@ -30,33 +30,31 @@ body {
 
 .controls {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
+}
+
+.green-button, .blue-button {
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  max-height: 40px;
+  line-height: 1.2;
 }
 
 .green-button {
   background-color: #4CAF50;
   color: white;
-  border: none;
-  padding: 10px;
-  margin: 5px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  flex-grow: 1;
-  min-width: 120px;
 }
 
 .blue-button {
   background-color: #2196F3;
   color: white;
-  border: none;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
 }
 
 .correct {
@@ -67,19 +65,20 @@ body {
   background-color: #F44336 !important;
 }
 
+/* Note buttons in a fixed 2-column layout */
 #note-buttons-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   margin-bottom: 20px;
+  justify-items: center;
+}
+
+/* Padding between note buttons and reset */
+#reset-score {
+  margin-top: 12px;
 }
 
 .scoreboard {
   text-align: center;
-}
-
-/* To make Next button appear greyed out when disabled */
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
 }
