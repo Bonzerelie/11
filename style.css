@@ -30,42 +30,25 @@ body {
 
 .controls {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-evenly;
   gap: 10px;
   margin-bottom: 20px;
-  align-items: center; /* Center buttons within the controls area */
 }
 
-/* Style for green buttons */
 .green-button {
   background-color: #4CAF50;
   color: white;
   border: none;
-  padding: 8px 15px;  /* Reduced padding for a narrower button */
+  padding: 10px;
   margin: 5px;
   font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
-  width: 150px;  /* Set a fixed width for the green buttons */
-  display: inline-block;
-  text-align: center;
-  white-space: nowrap;  /* Prevent text from wrapping to the next line */
+  flex-grow: 1;
+  min-width: 120px;
 }
 
-/* Modify the width of the 'play-reference', 'replay-note', and 'next-button' specifically */
-#play-reference, #replay-note, #next-button {
-  width: 130px;  /* Set narrower width for these specific buttons */
-}
-
-/* Flexbox setup for buttons to be aligned next to each other if space allows */
-.controls {
-  display: flex;
-  flex-wrap: wrap;  /* Allow buttons to wrap to the next line if there's not enough space */
-  justify-content: center;  /* Center buttons horizontally */
-  gap: 10px;  /* Add spacing between buttons */
-}
-
-/* Style for blue buttons */
 .blue-button {
   background-color: #2196F3;
   color: white;
@@ -74,7 +57,6 @@ body {
   font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
-  white-space: nowrap;  /* Prevent text from wrapping to the next line */
 }
 
 .correct {
@@ -94,4 +76,10 @@ body {
 
 .scoreboard {
   text-align: center;
+}
+
+/* To make Next button appear greyed out when disabled */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
