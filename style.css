@@ -74,6 +74,19 @@ body {
   justify-items: center;
 }
 
+@media (min-width: 500px) {
+  #note-buttons-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 700px) {
+  #note-buttons-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
 /* Padding between note buttons and reset */
 #reset-score {
   margin-top: 12px;
